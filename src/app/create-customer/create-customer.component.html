@@ -1,0 +1,50 @@
+<h3>New customer</h3>
+
+<!-- TODO create a form component to make it reusable ? (duplicated for update in details component)-->
+<form (ngSubmit)="saveCustomer()" [formGroup]="saveCustomerForm">
+    <div>
+        <label for="firstname">First name</label>
+        <input
+            type="text"
+            id="firstname"
+            required
+            formControlName="firstname"
+        />
+    </div>
+    
+    <div>
+        <label for="lastname">Last name</label>
+        <input
+            type="text"
+            id="lastname"
+            required
+            formControlName="lastname"
+        />
+    </div>
+    
+    <div>
+        <label for="address">Address</label>
+        <input
+            type="text"
+            id="address"
+            required
+            formControlName="address"
+        />
+    </div>
+    
+    <div>
+        <label for="phoneNumber">Phone number</label>
+        <input
+            type="tel"
+            id="phoneNumber"
+            required
+            formControlName="phoneNumber"
+        />
+    </div>
+    <div>
+        <!--disables the button when the form is not valid (all fields required)-->
+        <button type="submit" id="submit" [disabled]="saveCustomerForm.invalid">Confirm</button>
+    </div>
+</form>
+
+

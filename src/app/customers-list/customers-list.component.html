@@ -1,0 +1,13 @@
+<div class="listCustomers">
+    <ul [hidden]="!customers" class="customer">
+        <div *ngFor="let customer of customers">
+            <a href="/get/{{customer.id}}">
+                <li>
+                    {{customer.firstname}} {{customer.lastname}}
+                </li>
+            </a>
+        </div>
+    </ul>
+
+    <div [hidden]="customers">No customers yet! Please add one.</div>
+</div>
